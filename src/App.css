@@ -1,16 +1,63 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-a{
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    /* position: relative; */
+}
+
+a {
     text-decoration: none;
 }
 
-.nav{
+nav {
     background-color: grey;
     padding: 20px;
     display: flex;
-    gap: 20px
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav div a {
+    margin: 0 20px;
+}
+
+nav i {
+    display: none;
+}
+
+@media screen and (max-width:576px) {
+    nav div {
+        position: absolute;
+        top: 0;
+        right: -200px;
+        background-color: black;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        text-align: center;
+        padding-top: 20px;
+        transition: .5s;
+        z-index: 999;
+    }
+
+    .showNav {
+        right: 0;
+        transition: .5s;
+    }
+
+    nav i {
+        display: block;
+        color: #fff;
+    }
+
+    nav div a {
+        margin: 20px 0;
+    }
 }
